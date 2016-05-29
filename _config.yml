@@ -5,8 +5,8 @@ meta_description: '小果的博客'
 permalink: /:year/:month/:title.html
 avatar: 'http://gtms02.alicdn.com/tps/i2/TB10NunKFXXXXX_XVXXjUmX.FXX-180-180.jpeg'
 
-markdown: redcarpet
-highlighter: pygments
+gems: [jekyll-paginate]
+markdown: kramdown
 logo: false
 paginate: 6
 baseurl: /
