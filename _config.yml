@@ -1,0 +1,18 @@
+name: 果
+description: 'F2E developer, Love love love life'
+meta_description: '小果的博客'
+
+permalink: /:year/:month/:title.html
+avatar: 'http://gtms02.alicdn.com/tps/i2/TB10NunKFXXXXX_XVXXjUmX.FXX-180-180.jpeg'
+
+markdown: redcarpet
+highlighter: pygments
+logo: false
+paginate: 6
+baseurl: /
+domain_name: 'http://sobear.me'
+google_analytics: 'UA-XXXXXXXX-X'
+
+# Details for the RSS feed generator
+url:            'http://sobear.me'
+author:         '小果'
