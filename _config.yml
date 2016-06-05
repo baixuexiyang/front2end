@@ -1,18 +1,14 @@
-name: 果
-description: 'F2E developer, Love love love life'
-meta_description: '小果的博客'
-
-permalink: /:year/:month/:title.html
-avatar: 'http://gtms02.alicdn.com/tps/i2/TB10NunKFXXXXX_XVXXjUmX.FXX-180-180.jpeg'
-
+name: Front2End
+description: 'Share front end technology, improve user experience'
+meta_description: 'front2end'
+permalink: /:title.html
+avatar: '/assets/img/front2end.png'
 gems: [jekyll-paginate]
 markdown: kramdown
-logo: false
+logo: '/assets/img/front2end.png'
 paginate: 6
 baseurl: /
-domain_name: 'http://sobear.me'
+domain_name: 'http://front2end.com'
 google_analytics: 'UA-XXXXXXXX-X'
-
-# Details for the RSS feed generator
-url:            'http://sobear.me'
-author:         '小果'
+url:            'http://front2end.com'
+author:         'Front2End'
