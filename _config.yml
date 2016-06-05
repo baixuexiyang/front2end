@@ -2,10 +2,10 @@ name: Front2End
 description: 'Share front end technology, improve user experience'
 meta_description: 'front2end'
 permalink: /:title.html
-avatar: '/assets/img/front2end.png'
+avatar: '/assets/img/front2end.jpg'
 gems: [jekyll-paginate]
 markdown: kramdown
-logo: '/assets/img/front2end.png'
+logo: '/assets/img/front2end.jpg'
 paginate: 6
 baseurl: /
 domain_name: 'http://front2end.com'

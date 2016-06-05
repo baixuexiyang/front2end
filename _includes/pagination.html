@@ -1,9 +1,9 @@
 <nav class="pagination" role="pagination">
     {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
-            <a class="newer-posts" href="/" title="Previous Page">&laquo; prever Posts</a>
+            <a class="newer-posts" href="/" title="Previous Page">&laquo; Prever Posts</a>
         {% else %}
-            <a class="newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; prever Posts</a>
+            <a class="newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Prever Posts</a>
       {% endif %}
     {% endif %}
     <span class="page-number">{% if paginator.total_pages > 1 %} Page {{paginator.page}} of {{paginator.total_pages}} {% endif %}</span>
