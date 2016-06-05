@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2016-05-27 22:34:20 +0800
 categories: 日志
-archive: true
+archive: false
 ---
 ![](https://img.alicdn.com/tps/TB13keMLXXXXXbmXVXXXXXXXXXX-900-500.jpg)
 
