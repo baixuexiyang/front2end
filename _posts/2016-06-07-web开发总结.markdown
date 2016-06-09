@@ -5,7 +5,7 @@ date:   2016-06-07 22:34:20 +0800
 categories: 技术
 archive: false
 ---
-<!-- ![有帮助的截图]({{ site.url }}/assets/img/front2end.jpg) -->
+
 #### 隐藏a链接点击时的虚线
 
 IE：   hidefocus="hidefocus"   
