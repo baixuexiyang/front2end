@@ -1,17 +1,5 @@
 # Blog
 
-> [sobear.me](http://sobear.me)
+category:   技术、随笔
 
-## Debug
-
-```
-make server
-```
-
-## Deploy
-
-```
-make deploy
-```
-
-
+front2end.com
