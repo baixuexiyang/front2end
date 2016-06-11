@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "点击链接下载文件--download.js"
+date:   2016-06-10 15:23:20 +0800
+categories: 技术
+archive: false
+disqus: true
+published: false
+---
+
+随着浏览器的功能越来越强大，一些文件开始支持在线预览，比如PDF等。但是这个功能可能会影响我们想要的下载功能。本文给大家介绍如何通过js实现下载
+
+

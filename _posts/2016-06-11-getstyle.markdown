@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "获取元素样式"
+date:   2016-06-11 10:05:20 +0800
+categories: 技术
+archive: false
+disqus: true
+---
+
+我们在开发过程中经常会遇到通过js获取或者改变DOM元素的样式，方法有很多，比如：通过更改DOM元素的class。现在我们讨论原生js来获取DOM元素的CSS样式，注意是获取不是设置。
+在开始之前先说下获取最终应用在元素上的所有CSS属性对象的意思是，如果没有给元素设置任何样式，也会把浏览器默认的样式返回来。
+
+# ele.style
+
+在学习DOM的时候就看到通过ele.style来获取元素样式值，但是有时候获取的并非是节点的样式值，而是空值。这是因为ele.style只能获取写在元素标签中的style属性里的样式值，无法获取到定义在<style></style>和通过<link href="css.css">加载进来的样式属性
+
+{% highlight javascript %}
+var style = document.getElementById("style");
+//获取节点的color
+style.style.color;
+{% endhighlight %}
+
+# getComputedStyle
+
+getComputedStyle是一个可以获取当前元素所有最终使用的CSS属性值。
+
+{% highlight javascript %}
+window.getComputedStyle("元素", "伪类");
+{% endhighlight %}
+
+这个方法接受两个参数：要取得计算样式的元素和一个伪元素字符串（例如“:before”）。如果不需要伪元素信息，第二个参数可以是null。也可以通过document.defaultView.getComputedStyle("元素", "伪类");来使用
+
+{% highlight javascript %}
+var style = document.getElementById("style"),
+demo = window.getComputedStyle(style, null); 
+//获取节点的color
+demo.color  
+{% endhighlight %}
+
+	Firefox和Safari会将颜色转换成rgb格式，如果test节点上没有任何样式，通过style.length来查看浏览器默认样式的个数。IE6-8不支持该方法，需要使用下面的方法
+
+# currentStyle
+
+currentStyle是IE浏览器自己的一个属性，其语法与ele.style类似，差别在于element.currentStyle返回的是元素当前应用的最终CSS属性值（包括外链CSS文件，页面中嵌入的<style>属性等）。
+
+
+{% highlight javascript %}
+var style = document.getElementById("style"),
+demo = style.currentStyle; 
+//获取节点的color
+demo.color; 
+{% endhighlight %}
+
+	对于综合属性border等，ie返回undefined，其他浏览器有的返回值，有的不返回，但是borderLeftWidth这样的属性是返回值的
+
+# getPropertyValue
+
+getPropertyValue获取CSS样式的直接属性名称
+
+{% highlight javascript %}
+var style = document.getElementById('style');
+window.getComputedStyle(style, null).getPropertyValue(属性)
+{% endhighlight %}
+
+	属性名不支持驼峰格式，IE6-8不支持该方法，需要使用下面的方法
+
+# getAttribute
+
+getAttribute与getPropertyValue类似，有一点的差异是属性名驼峰格式
+
+{% highlight javascript %}
+var style = document.getElementById('style');
+window.getComputedStyle(style, null).getPropertyValue("backgroundColor");
+{% endhighlight %}
+
+	该方法只支持IE6-8
+
+# 总结
+
+ jQuery的CSS()方法，其底层运作就应用了getComputedStyle以及getPropertyValue方法，当我们使用原生的js开发时就可以通过以上方法获取元素的值。
+
+下面是一个兼容ie,firefox,chrome等浏览器的获取元素样式的方法，可以应用到项目中
+
+{% highlight javascript %}
+function getStyle(ele) {
+    var style = null;
+    
+    if(window.getComputedStyle) {
+        style = window.getComputedStyle(ele, null);
+    }else{
+        style = ele.currentStyle;
+    }
+    
+    return style;
+}
+{% endhighlight %}
