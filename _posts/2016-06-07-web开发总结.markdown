@@ -4,6 +4,7 @@ title:  "web开发常见问题总结"
 date:   2016-06-07 22:34:20 +0800
 categories: 技术
 archive: false
+disqus: true
 ---
 
 #### 隐藏a链接点击时的虚线
