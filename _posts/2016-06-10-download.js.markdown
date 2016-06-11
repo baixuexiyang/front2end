@@ -5,9 +5,35 @@ date:   2016-06-10 15:23:20 +0800
 categories: 技术
 archive: false
 disqus: true
-published: false
 ---
 
 随着浏览器的功能越来越强大，一些文件开始支持在线预览，比如PDF等。但是这个功能可能会影响我们想要的下载功能。本文给大家介绍如何通过js实现下载
 
+# IE浏览器
 
+在ie浏览器我们通过将文件链接放在一个隐藏的iframe上，然后执行下面的方法
+{% highlight javascript %}
+document.execCommand('SaveAs', false, fileName)
+{% endhighlight %}
+
+	注意：execCommand('SaveAs')，目前还有部分格式的文件不支持下载，比如PDF
+
+# 非IE浏览器
+
+非ie浏览器主要使用了标签新属性download，我们把要下载的文件链接放在a标签的href属性中，并且注册一个click事件，然后在给a标签加上download属性，触发点击事件就可以实现下载了。
+
+{% highlight javascript %}
+var a = document.createElement("a"),
+    evt = document.createEvent("MouseEvents"),
+    isPath = path.lastIndexOf(".") > -1;
+evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+a.download = fileName;
+a.href = isPath || isData ? path : URL.createObjectURL(new Blob([path]));
+a.dispatchEvent(evt);
+{% endhighlight %}
+
+
+download.js完整代码地址：[download.js][download.js]
+欢迎fork和star
+
+[download.js]: https://github.com/baixuexiyang/download
