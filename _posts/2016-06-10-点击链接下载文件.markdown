@@ -1,8 +1,0 @@
----
-layout: post
-title:  "点击链接下载文件"
-date:   2016-06-10 15:23:20 +0800
-categories: 技术
-archive: false
-disqus: true
----
